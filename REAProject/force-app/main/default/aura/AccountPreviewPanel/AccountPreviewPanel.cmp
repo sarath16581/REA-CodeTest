@@ -1,0 +1,43 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global" >
+<aura:attribute name="disabled" type="Boolean" default="false" />
+<aura:attribute name="saved" type="Boolean" default="false" />
+<aura:attribute name="showSpinner" type="Boolean" default="true" />
+<aura:attribute name="contact" type="Contact"  />
+<aura:attribute name="account" type="Account"  />
+<aura:if isTrue="{!v.showSpinner}">
+    <lightning:spinner />
+</aura:if>
+<force:recordData aura:id="accountRecord" recordId="{!v.recordId}" targetFields="{!v.contact}" layoutType="FULL" />
+    <lightning:card>
+    <aura:set attribute="title">
+        <lightning:icon iconName="utility:connected_apps" size="small"/>
+        Account Information
+    </aura:set>
+    <aura:set attribute="footer">
+        <lightning:button aura:id="updateButton" variant="brand" type="button" name="update" label="update" onclick="{!c.handleUpdate}" /> 
+    </aura:set>
+    <lightning:recordEditForm
+		aura:id="accEditForm"
+		onload="{!c.handleLoad}"
+		onsuccess="{!c.handleSuccess}"
+		recordId="{!v.contact.AccountId}"
+		objectApiName="Account">
+	
+		<lightning:messages />
+
+		<lightning:inputField fieldName="Name" />
+        <lightning:inputField fieldName="Description" />
+        <lightning:outputField fieldName="CreatedDate"  variant="label-inline"/>
+    </lightning:recordEditForm>
+	<lightning:recordEditForm
+		aura:id="conEditForm"
+		onsuccess="{!c.handleSuccess}"
+		recordId="{!v.recordId}"
+		objectApiName="Contact">
+	
+		<lightning:messages />
+		<lightning:inputField fieldName="Primary__c" variant="label-inline"/>
+    </lightning:recordEditForm>
+</lightning:card>
+   
+</aura:component>
