@@ -35,6 +35,7 @@
     handleUpdateHelper : function(cmp, event, helper) {
         var action = cmp.get("c.updateContactRecord");
         console.log('cnt rec'+JSON.stringify(cmp.get("v.contactRecord")));
+        //Stringify the contact record as the data contains relationship fields.//Relationship fields get elimimated when passed to server side controller
         action.setParams({record : JSON.stringify(cmp.get("v.contactRecord")) });
         // Create a callback that is executed after the server-side action returns
         action.setCallback(this, function(response) {

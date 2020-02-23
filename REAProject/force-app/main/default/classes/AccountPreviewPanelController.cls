@@ -1,4 +1,6 @@
-public without sharing class AccountDetailsOnContactController {
+/*Controller class for AccountPreviewPanelCustomCmp
+**This class gets the contact record and performs update on Contact and Account records*/
+public without sharing class AccountPreviewPanelController {
     @AuraEnabled
     public static Contact getContactRecord(Id recordId){
         Contact conRec = new Contact();

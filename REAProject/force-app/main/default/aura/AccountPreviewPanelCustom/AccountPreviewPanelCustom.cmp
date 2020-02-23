@@ -1,3 +1,8 @@
+<!--Component Using Custom user input and the record is updated thru DML
+This is a sidebar component and is refreshed when the Data is updated
+This component does not refresh automatically when record page is updated
+This component is a SideBar Component on Contact Detail Page
+Author : Sarath Burra-->
 <aura:component controller="AccountPreviewPanelController" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global" >
     <aura:attribute name="contactRecord" type="contact" default="{'sobjectType':'Contact'}"/>
     <aura:attribute name="newContactError" type="String"/>
