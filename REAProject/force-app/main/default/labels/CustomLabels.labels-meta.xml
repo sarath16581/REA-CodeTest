@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata"/>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>App_SuccessMsg</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>App_SuccessMsg</shortDescription>
+        <value>The record has been updated successfully.</value>
+    </labels>
+    <labels>
+        <fullName>App_Title</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>App_Title</shortDescription>
+        <value>Account Preview Panel</value>
+    </labels>
+</CustomLabels>

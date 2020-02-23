@@ -1,16 +1,15 @@
-<aura:component controller="AccountDetailsOnContactController" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global" >
+<aura:component controller="AccountPreviewPanelController" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global" >
     <aura:attribute name="contactRecord" type="contact" default="{'sobjectType':'Contact'}"/>
     <aura:attribute name="newContactError" type="String"/>
-    <aura:attribute name="title" type="String" default="Account Information"/>
     <aura:attribute name="msg" type="String" default="Please Provide a Valid Value"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     
     <lightning:card>
         <aura:set attribute="title">
-            <lightning:icon iconName="standard:account" size="small"/> {!v.title}
+            <lightning:icon iconName="standard:account" size="small"/> {!$Label.c.App_Title}
         </aura:set>
         <aura:set attribute="footer">
-            <lightning:button aura:id="updateButton" variant="brand" type="button" name="Update" label="update" onclick="{!c.handleUpdate}" /> 
+            <lightning:button aura:id="updateButton" variant="brand" type="button" name="Update" label="Update" onclick="{!c.handleUpdate}" /> 
         </aura:set>
     
         <div class="slds-p-horizontal--small">

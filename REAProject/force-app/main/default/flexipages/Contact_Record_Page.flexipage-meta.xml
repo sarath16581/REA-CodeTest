@@ -169,6 +169,9 @@
             <componentName>AccountPreviewPanel</componentName>
         </componentInstances>
         <componentInstances>
+            <componentName>AccountPreviewPanelCustom</componentName>
+        </componentInstances>
+        <componentInstances>
             <componentInstanceProperties>
                 <name>tabs</name>
                 <value>sidebartabs</value>
